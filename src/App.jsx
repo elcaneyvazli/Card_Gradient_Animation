@@ -83,16 +83,13 @@ function App() {
                 <AnimatePresence>
                   {isHovered && (
                     <motion.div
-                      className="absolute pointer-events-none"
+                      className="absolute inset-0 pointer-events-none"
                       style={{
-                        top: `calc(${mousePosition.y} - 50px)`,
-                        left: `calc(${mousePosition.x} - 50px)`,
-                        width: "100px",
-                        height: "100px",
-                        background: `radial-gradient(circle at center, rgba(0,212,255,1) 0%, transparent 60%)`,
+                        background: `radial-gradient(circle at ${mousePosition.x} ${mousePosition.y}, rgba(255,255,255,0.3) 0%, transparent 100%)`,
+                        opacity: 1,
                       }}
                       initial={{ opacity: 0 }}
-                      animate={{ opacity: 0.5 }}
+                      animate={{ opacity: 0.2 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     />
